@@ -1,0 +1,2 @@
+/home/sstukelja/CS480/computer-graphics/PA0/build/CMakeFiles/Tutorial.dir
+/home/sstukelja/CS480/computer-graphics/PA0/build/CMakeFiles/Tutorial_SUCCESSFUL.dir
