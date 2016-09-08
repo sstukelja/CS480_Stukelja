@@ -35,7 +35,7 @@ mkdir build
 cd build
 cmake ..
 make
-./Tutorial vertexFilename fragmentFilename
+./Tutorial vshader.glsl fshader.glsl
 ```
 
 ### Makefile Instructions 
@@ -46,7 +46,7 @@ mkdir build
 cd build
 cp ../makefile .
 make
-./Tutorial vertexFilename fragmentFilename
+./Tutorial vshader.glsl fshader.glsl
 ```
 ## Notes
 Shaders loaders are still a work-in-progress.
@@ -54,5 +54,5 @@ Shaders loaders are still a work-in-progress.
 ## Ubuntu.cse.unr.edu
 OpenGL 3.3 will run on the [ubuntu.cse.unr.edu](https://ubuntu.cse.unr.edu/) website. To do so follow the build instructions, but when running the Tutorial executable use this line to execute.
 ```bash
-/usr/NX/scripts/vgl/vglrun ./Tutorial vertexFilename fragmentFilename
+/usr/NX/scripts/vgl/vglrun ./Tutorial vshader.glsl fshader.glsl
 ```
