@@ -106,9 +106,15 @@ void Engine::Keyboard()
 	{
 		cout << "O pressed" << endl;
         if(pause == 2)
+        {
             pause = 0;
+            m_DT = pause_DT;
+        }
         else
+        {
             pause = 2;
+            pause_DT = m_DT;
+        }
 	}
     if (m_event.key.keysym.sym == SDLK_p)
 	{

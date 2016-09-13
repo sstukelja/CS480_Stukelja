@@ -97,26 +97,28 @@ void Engine::Keyboard()
 	if (m_event.key.keysym.sym == SDLK_r)
 	{
 		cout << "R pressed" << endl;
-        /*if(pause == 1)
+        if(pause == 1)
             pause = 0;
         else
-            pause = 1;*/
+            pause = 1;
 	}
     if (m_event.key.keysym.sym == SDLK_o)
 	{
 		cout << "O pressed" << endl;
-        /*if(pause == 2)
+        if(pause == 2)
             pause = 0;
+            m_DT = pause_DT;
         else
-            pause = 2;*/
+            pause = 2;
+            pause_DT = m_DT;
 	}
     if (m_event.key.keysym.sym == SDLK_p)
 	{
 		cout << "P pressed" << endl;
-        /*if(pause == 3)
+        if(pause == 3)
             pause = 0;
         else
-            pause = 3;*/
+            pause = 3;
 	}
     if (m_event.key.keysym.sym == SDLK_m)
 	{
@@ -131,10 +133,10 @@ void Engine::Keyboard()
   if (m_event.button.type == SDL_MOUSEBUTTONDOWN)
   {
 	cout << "Mouse button down" << endl;
-    /*if(direction)
+    if(direction)
         direction = false;
     else
-        direction = true;*/
+        direction = true;
   }
 }
 

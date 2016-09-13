@@ -86,6 +86,7 @@ void Object::Update(unsigned int dt, bool direction, int pause)
     {
         switch(pause)
         {
+            // 0 is normal state, 1 is stopping rotation, 2 is stopping orbit, and 3 is complete pause
             case 0:
             angle -= (dt * M_PI/1000);
   	        model = glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0)) * glm::translate(glm::mat4(1.0f), glm::vec3(5.0, 0.0, 0.0)) * glm::rotate(glm::mat4(1.0f), (angle), 
@@ -110,6 +111,7 @@ void Object::Update(unsigned int dt, bool direction, int pause)
     {
         switch(pause)
         {
+            // 0 is normal state, 1 is stopping rotation, 2 is stopping orbit, and 3 is complete pause
             case 0:
             angle += (dt * M_PI/1000);
       	    model = glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0)) * glm::translate(glm::mat4(1.0f), glm::vec3(5.0, 0.0, 0.0)) * glm::rotate(glm::mat4(1.0f), (angle), 

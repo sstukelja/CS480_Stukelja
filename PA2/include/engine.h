@@ -34,6 +34,7 @@ class Engine
     bool m_running;
     bool direction = true;
     int pause = 0;
+    unsigned int pause_DT;
 };
 
 #endif // ENGINE_H
