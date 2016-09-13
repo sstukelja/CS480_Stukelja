@@ -110,7 +110,7 @@ bool Graphics::Initialize(int width, int height)
 void Graphics::Update(unsigned int dt, bool direction, int pause)
 {
   // Update the object
-  m_cube->Update(dt, direction, pause);
+  m_cube->Update(dt/*, direction, pause*/);
 }
 
 void Graphics::Render()

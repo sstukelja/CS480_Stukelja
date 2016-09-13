@@ -52,6 +52,13 @@ bool Engine::Initialize()
 
 void Engine::Run()
 {
+  cout << "Menu:" << endl;
+  cout << "Press R to start/stop the rotation" << endl;
+  cout << "Press O to start/stop the orbit" << endl;
+  cout << "Press P to pause the object" << endl;
+  cout << "Click with either mouse button to reverse direction" << endl;
+  cout << "Press M to print this menu again" << endl;
+
   m_running = true;
 
   while(m_running)
@@ -66,7 +73,7 @@ void Engine::Run()
     }
 
     // Update and render the graphics
-    m_graphics->Update(m_DT);
+    m_graphics->Update(m_DT, direction, pause);
     m_graphics->Render();
 
     // Swap to the Window
@@ -87,14 +94,47 @@ void Engine::Keyboard()
     {
       m_running = false;
     }
-	if (m_event.key.keysym.sym == SDLK_a)
+	if (m_event.key.keysym.sym == SDLK_r)
 	{
-		cout << "A pressed" << endl;
+		cout << "R pressed" << endl;
+        if(pause == 1)
+            pause = 0;
+        else
+            pause = 1;
+	}
+    if (m_event.key.keysym.sym == SDLK_o)
+	{
+		cout << "O pressed" << endl;
+        if(pause == 2)
+            pause = 0;
+        else
+            pause = 2;
+	}
+    if (m_event.key.keysym.sym == SDLK_p)
+	{
+		cout << "P pressed" << endl;
+        if(pause == 3)
+            pause = 0;
+        else
+            pause = 3;
+	}
+    if (m_event.key.keysym.sym == SDLK_m)
+	{
+		cout << "Menu:" << endl;
+        cout << "Press R to start/stop the rotation" << endl;
+        cout << "Press O to start/stop the orbit" << endl;
+        cout << "Press P to pause the object" << endl;
+        cout << "Click with either mouse button to reverse direction" << endl;
+        cout << "Press M to print this menu again" << endl;
 	}
   }
   if (m_event.button.type == SDL_MOUSEBUTTONDOWN)
   {
 	cout << "Mouse button down" << endl;
+    if(direction)
+        direction = false;
+    else
+        direction = true;
   }
 }
 
