@@ -97,7 +97,7 @@ void Object::Update(unsigned int dt, bool direction, int pause)
             case 1:
             stopAngle -= (dt * M_PI/1000);
             angle -= (dt * M_PI/1000);
-  	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (-angle), 
+  	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (angle * 0), 
             glm::vec3(0.0, 5.0, 0.0));
             break;
             case 2:
@@ -107,7 +107,7 @@ void Object::Update(unsigned int dt, bool direction, int pause)
             case 3:
             stopAngle -= (dt * M_PI/1000);
             angle -= (0 * M_PI/1000);
-  	        model = glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0)) * glm::translate(glm::mat4(1.0f), glm::vec3(5.0, 0.0, 0.0)) * glm::rotate(glm::mat4(1.0f), (angle), 
+  	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (angle), 
             glm::vec3(0.0, 5.0, 0.0));
         }
     }
@@ -125,7 +125,7 @@ void Object::Update(unsigned int dt, bool direction, int pause)
             case 1:
             stopAngle += (dt * M_PI/1000);
             angle += (dt * M_PI/1000);
-  	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (-angle), 
+  	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (angle * 0), 
             glm::vec3(0.0, 5.0, 0.0));
             break;
             case 2:
@@ -136,7 +136,7 @@ void Object::Update(unsigned int dt, bool direction, int pause)
             case 3:
             stopAngle += (dt * M_PI/1000);
             angle += (0 * M_PI/1000);
-  	        model = glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0)) * glm::translate(glm::mat4(1.0f), glm::vec3(5.0, 0.0, 0.0)) * glm::rotate(glm::mat4(1.0f), (angle), 
+  	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (angle), 
             glm::vec3(0.0, 5.0, 0.0));
             break;
         }
