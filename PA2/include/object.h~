@@ -22,6 +22,7 @@ class Object
     GLuint IB;
 
     float angle;
+    float oldAngle;
 };
 
 #endif /* OBJECT_H */
