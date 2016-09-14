@@ -1,6 +1,7 @@
 #include "object.h"
 #include <iostream>
 #include "SDL.h"
+#include <cmath>
 using namespace std;
 
 Object::Object()
