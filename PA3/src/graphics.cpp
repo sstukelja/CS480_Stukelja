@@ -131,7 +131,8 @@ void Graphics::Render()
   // Render the object
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_cube->GetModel()));
   m_cube->Render();
-  m_moon->Render();
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_cube->GetModel2()));
+  m_cube->Render();
 
   // Get any errors from OpenGL
   auto error = glGetError();

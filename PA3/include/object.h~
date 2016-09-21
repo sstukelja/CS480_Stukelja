@@ -16,6 +16,7 @@ class Object
 
   private:
     glm::mat4 model;
+    glm::mat4 model2;
     std::vector<Vertex> Vertices;
     std::vector<unsigned int> Indices;
     GLuint VB;
@@ -23,7 +24,6 @@ class Object
 
     float angle;
     float stopAngle;
-    Object *m_moon;
 };
 
 #endif /* OBJECT_H */

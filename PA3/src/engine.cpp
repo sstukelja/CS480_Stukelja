@@ -131,7 +131,7 @@ void Engine::Keyboard()
         cout << "Press M to print this menu again" << endl;
 	}
   }
-  if (m_event.button.type == SDL_BUTTON_LEFT)
+  if (m_event.button.type == SDL_MOUSEBUTTONDOWN)
   {
 	cout << "Mouse button down" << endl;
     if(direction)
@@ -139,10 +139,14 @@ void Engine::Keyboard()
     else
         direction = true;
   }
-  if (m_event.button.type == SDL_BUTTON_RIGHT)
-  {
-    cout << "Right button down" << endl;
-  }
+  if (m_event.key.keysym.sym == SDLK_LEFT)
+	{
+        direction = false;
+	}
+  if (m_event.key.keysym.sym == SDLK_RIGHT)
+	{
+        direction = true;
+	}
 }
 
 unsigned int Engine::getDT()

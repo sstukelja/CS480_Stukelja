@@ -13,9 +13,11 @@ class Object
     void Render();
 
     glm::mat4 GetModel();
+    glm::mat4 GetModel2();
 
   private:
     glm::mat4 model;
+    glm::mat4 model2;
     std::vector<Vertex> Vertices;
     std::vector<unsigned int> Indices;
     GLuint VB;

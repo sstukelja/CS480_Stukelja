@@ -93,22 +93,30 @@ void Object::Update(unsigned int dt, bool direction, int pause)
             angle -= (dt * M_PI/1000);
   	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (angle), 
             glm::vec3(0.0, 5.0, 0.0));
+            model2 = glm::translate(glm::mat4(model), glm::vec3(5.0 * sin(angle), 0.0, 5.0 * cos(angle))) * glm::rotate(glm::mat4(1.0f), (angle), 
+            glm::vec3(0.0, 5.0, 0.0));
             break;
             case 1:
             stopAngle -= (dt * M_PI/1000);
             angle -= (dt * M_PI/1000);
   	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (angle * 0), 
             glm::vec3(0.0, 5.0, 0.0));
+            model2 = glm::translate(glm::mat4(model), glm::vec3(5.0 * sin(angle), 0.0, 5.0 * cos(angle))) * 
+            glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0));
             break;
             case 2:
             angle -= (dt * M_PI/1000);
   	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(stopAngle), 0.0, 5.0 * sin(stopAngle))) * glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0));
+            model2 = glm::translate(glm::mat4(model), glm::vec3(5.0 * sin(angle), 0.0, 5.0 * cos(angle))) * 
+            glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0));
             break;
             case 3:
             stopAngle -= (dt * M_PI/1000);
             angle -= (0 * M_PI/1000);
   	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (angle), 
             glm::vec3(0.0, 5.0, 0.0));
+            model2 = glm::translate(glm::mat4(model), glm::vec3(5.0 * sin(angle), 0.0, 5.0 * cos(angle))) * 
+            glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0));
         }
     }
     if(!direction)
@@ -121,23 +129,31 @@ void Object::Update(unsigned int dt, bool direction, int pause)
             angle += (dt * M_PI/1000);
       	    model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * 
             glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0));
+            model2 = glm::translate(glm::mat4(model), glm::vec3(5.0 * sin(angle), 0.0, 5.0 * cos(angle))) * 
+            glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0));
             break;
             case 1:
             stopAngle += (dt * M_PI/1000);
             angle += (dt * M_PI/1000);
   	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (angle * 0), 
             glm::vec3(0.0, 5.0, 0.0));
+             model2 = glm::translate(glm::mat4(model), glm::vec3(5.0 * sin(angle), 0.0, 5.0 * cos(angle))) * 
+            glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0));
             break;
             case 2:
             angle += (dt * M_PI/1000);
   	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(stopAngle), 0.0, 5.0 * sin(stopAngle))) * glm::rotate(glm::mat4(1.0f), (angle), 
             glm::vec3(0.0, 5.0, 0.0));
+             model2 = glm::translate(glm::mat4(model), glm::vec3(5.0 * sin(angle), 0.0, 5.0 * cos(angle))) * 
+            glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0));
             break;
             case 3:
             stopAngle += (dt * M_PI/1000);
             angle += (0 * M_PI/1000);
   	        model = glm::translate(glm::mat4(1.0f), glm::vec3(5.0 * cos(angle), 0.0, 5.0 * sin(angle))) * glm::rotate(glm::mat4(1.0f), (angle), 
             glm::vec3(0.0, 5.0, 0.0));
+             model2 = glm::translate(glm::mat4(model), glm::vec3(5.0 * sin(angle), 0.0, 5.0 * cos(angle))) * 
+            glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0));
             break;
         }
     }
@@ -146,6 +162,11 @@ void Object::Update(unsigned int dt, bool direction, int pause)
 glm::mat4 Object::GetModel()
 {
   return model;
+}
+
+glm::mat4 Object::GetModel2()
+{
+  return model2;
 }
 
 void Object::Render()
