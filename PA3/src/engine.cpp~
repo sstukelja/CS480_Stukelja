@@ -56,7 +56,9 @@ void Engine::Run()
   cout << "Press R to start/stop the rotation" << endl;
   cout << "Press O to start/stop the orbit" << endl;
   cout << "Press P to pause the object" << endl;
-  cout << "Click with either mouse button to reverse direction" << endl;
+  cout << "Click with either mouse button to toggle orbit direction" << endl;
+  cout << "Press the left arrow key to orbit clock-wise" << endl;
+  cout << "Press the right arrow key to orbit counter clock-wise" << endl;
   cout << "Press M to print this menu again" << endl;
 
   m_running = true;
@@ -133,7 +135,6 @@ void Engine::Keyboard()
   }
   if (m_event.button.type == SDL_MOUSEBUTTONDOWN)
   {
-	cout << "Mouse button down" << endl;
     if(direction)
         direction = false;
     else
