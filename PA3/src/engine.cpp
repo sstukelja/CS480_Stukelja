@@ -133,7 +133,6 @@ void Engine::Keyboard()
   }
   if (m_event.button.type == SDL_MOUSEBUTTONDOWN)
   {
-	cout << "Mouse button down" << endl;
     if(direction)
         direction = false;
     else

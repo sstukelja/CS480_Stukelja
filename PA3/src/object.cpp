@@ -83,6 +83,7 @@ Object::~Object()
 
 void Object::Update(unsigned int dt, bool direction, int pause)
 {
+    // CCW
     if(direction)
     {
         switch(pause)
@@ -119,6 +120,7 @@ void Object::Update(unsigned int dt, bool direction, int pause)
             glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 5.0, 0.0));
         }
     }
+    // CW
     if(!direction)
     {
         switch(pause)

@@ -53,9 +53,7 @@ make
 R - start/stop rotation
 O - start/stop orbit
 P - start/stop object
-Mouse Click - toggle orbit direction
-Left Arrow - planet orbit clock-wise
-Right Arrow - planet orbit counter clock-wise
+Mouse Click - reverse orbit
 M - menu
 
 ## Ubuntu.cse.unr.edu
