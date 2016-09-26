@@ -46,7 +46,6 @@ bool Graphics::Initialize(int width, int height)
 
   // Create the object
   m_cube = new Object();
-  m_moon = new Object();
 
   // Set up the shaders
   m_shader = new Shader();

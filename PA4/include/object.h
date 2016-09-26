@@ -14,6 +14,7 @@ class Object
 
     glm::mat4 GetModel();
     glm::mat4 GetModel2();
+    bool LoadObj();
 
   private:
     glm::mat4 model;

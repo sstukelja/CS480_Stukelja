@@ -2,6 +2,7 @@
 #include <iostream>
 #include "SDL.h"
 #include <cmath>
+#include <fstream>
 using namespace std;
 
 Object::Object()
@@ -186,5 +187,37 @@ void Object::Render()
 
   glDisableVertexAttribArray(0);
   glDisableVertexAttribArray(1);
+}
+
+bool Object::LoadObj()
+{
+    string line;
+    ifstream fin;
+    fin.open("../models/box.obj");
+    if(!(fin.is_open()))
+    {
+        return false;
+    }
+
+    while(fin.good())
+    {
+        fin >> line;
+        if(line[0] == 'v' && line[1] != 'n')
+        {
+            glm::vec3 vertex;
+            fin >> vertex.x;
+            fin >> vertex.y;
+            fin >> vertex.z;
+            fin.ignore(100, '\n');
+            cout << "Vertex: " << vertex.x << " " << vertex.y << " " << vertex.z << endl;
+        }
+        else
+        {
+            fin.ignore(300, '\n');
+        }
+    }
+    fin.close();
+    return true;
+
 }
 
