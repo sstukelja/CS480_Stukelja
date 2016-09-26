@@ -111,7 +111,6 @@ void Graphics::Update(unsigned int dt, bool direction, int pause)
 {
   // Update the object
   m_cube->Update(dt, direction, pause);
-  m_moon->Update(dt, direction, pause);
 }
 
 void Graphics::Render()

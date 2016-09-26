@@ -65,6 +65,8 @@ Object::Object()
     Indices[i] = Indices[i] - 1;
   }
 
+    //Test
+    LoadObj();
   angle = 0.0f;
 
   glGenBuffers(1, &VB);
@@ -191,6 +193,12 @@ void Object::Render()
 
 bool Object::LoadObj()
 {
+    Vertices.clear();
+    Indices.clear();
+
+    vector<unsigned int> vertexIndices, normalIndices;
+    //vector<glm::vec3> vertices;
+    //vector<glm::vec3> normals;
     string line;
     ifstream fin;
     fin.open("../models/box.obj");
@@ -209,14 +217,45 @@ bool Object::LoadObj()
             fin >> vertex.y;
             fin >> vertex.z;
             fin.ignore(100, '\n');
+            Vertex temp(vertex, vertex);
+            Vertices.push_back(temp);
+            // Remove cout
             cout << "Vertex: " << vertex.x << " " << vertex.y << " " << vertex.z << endl;
         }
+        /*if(line[0] == 'v' && line[1] == 'n')
+        {
+            glm::vec3 normal;
+            fin >> normal.x;
+            fin >> normal.y;
+            fin >> normal.z;
+            fin.ignore(100, '\n');
+            //normals.push_back(normal);
+        }*/
+        if(line[0] == 'f')
+        {
+            unsigned int vertexIndex[3], normalIndex[3];
+            for(int i = 0; i < 3; i++)
+            {
+                fin >> vertexIndex[i];
+                fin.ignore(2,'\n');
+                fin >> normalIndex[i];
+                Indices.push_back(vertexIndex[i]);
+                //normalIndices.push_back(normalIndex[i]);
+            }
+        }    
         else
         {
             fin.ignore(300, '\n');
         }
     }
     fin.close();
+
+    // The index works at a 0th index
+  for(unsigned int i = 0; i < Indices.size(); i++)
+  {
+    Indices[i] = Indices[i] - 1;
+  }
+
     return true;
 
 }
