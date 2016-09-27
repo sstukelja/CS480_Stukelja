@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "graphics_headers.h"
+#include <string>
 
 class Object
 {
@@ -14,6 +15,7 @@ class Object
 
     glm::mat4 GetModel();
     glm::mat4 GetModel2();
+    bool LoadObj(string model);
 
   private:
     glm::mat4 model;

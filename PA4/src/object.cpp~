@@ -66,6 +66,7 @@ Object::Object()
   }
 
     //Test
+    //string file = "box.obj";
     LoadObj();
   angle = 0.0f;
 
@@ -193,17 +194,19 @@ void Object::Render()
 
 bool Object::LoadObj()
 {
-    Vertices.clear()
-    Indices.clear()
+    Vertices.clear();
+    Indices.clear();
 
     vector<unsigned int> vertexIndices, normalIndices;
-    //vector<glm::vec3> vertices;
-    //vector<glm::vec3> normals;
     string line;
     ifstream fin;
     fin.open("../models/box.obj");
+    //string filePath = "../models/";
+    //filePath += model;
+    //fin.open(filePath);
     if(!(fin.is_open()))
     {
+        cout << "Model file could not be opened" << endl;
         return false;
     }
 
@@ -216,12 +219,10 @@ bool Object::LoadObj()
             fin >> vertex.x;
             fin >> vertex.y;
             fin >> vertex.z;
-            fin.ignore(100, '\n');
             Vertex temp(vertex, vertex);
             Vertices.push_back(temp);
-            // Remove cout
-            cout << "Vertex: " << vertex.x << " " << vertex.y << " " << vertex.z << endl;
         }
+        // not currently necessary
         /*if(line[0] == 'v' && line[1] == 'n')
         {
             glm::vec3 normal;
@@ -237,10 +238,13 @@ bool Object::LoadObj()
             for(int i = 0; i < 3; i++)
             {
                 fin >> vertexIndex[i];
-                fin.ignore(2,'\n');
+                fin.ignore(1,'\n');
+                if(fin.peek() == '/')
+                {
+                    fin.ignore(1,'\n');
+                }
                 fin >> normalIndex[i];
                 Indices.push_back(vertexIndex[i]);
-                //normalIndices.push_back(normalIndex[i]);
             }
         }    
         else
@@ -250,7 +254,7 @@ bool Object::LoadObj()
     }
     fin.close();
 
-    // The index works at a 0th index
+  // The index works at a 0th index
   for(unsigned int i = 0; i < Indices.size(); i++)
   {
     Indices[i] = Indices[i] - 1;

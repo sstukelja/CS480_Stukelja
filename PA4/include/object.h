@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "graphics_headers.h"
+#include <string>
 
 class Object
 {
