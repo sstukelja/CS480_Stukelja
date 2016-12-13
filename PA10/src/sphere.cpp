@@ -12,7 +12,7 @@ Sphere::Sphere( string fileName, btDiscreteDynamicsWorld* dynamicsWorld ) : Mode
         
     // Create sphere motion state, place 50 meters above ground
     btDefaultMotionState* fallMotionState = new btDefaultMotionState( 
-    btTransform( btQuaternion( 0, 0, 0, 1 ), btVector3( -23, 3, -30 ) ) );            
+    btTransform( btQuaternion( 0, 0, 0, 1 ), btVector3( -23, 0, -30 ) ) );            
             
     // Create Sphere rigid body
     btScalar mass = 10;

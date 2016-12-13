@@ -12,7 +12,7 @@ Walls::Walls( btDiscreteDynamicsWorld* dynamicsWorld )
         
     // Create motion states
     btDefaultMotionState* ceilingMotionState = new btDefaultMotionState( 
-    btTransform( btQuaternion( 0, 0, 0, 1 ), btVector3( 0, 1, 0 ) ) );            
+    btTransform( btQuaternion( 0, 0, 0, 1 ), btVector3( 0, -1, 0 ) ) );            
 
     // Create rigid bodies
     btScalar mass = 0;
